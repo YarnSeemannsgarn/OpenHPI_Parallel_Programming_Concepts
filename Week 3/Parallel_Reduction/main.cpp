@@ -25,22 +25,22 @@ int main(int argc, char* argv[])
   }
 
   // Get command line arguments arguments
-  int threads;
-  int start;
-  long end;
+  unsigned int threads;
+  unsigned long start;
+  unsigned long end;
   std::istringstream ( argv[1] ) >> threads;
   std::istringstream ( argv[2] ) >> start;
   std::istringstream ( argv[3] ) >> end;
 
   // Parallel reduction
   omp_set_num_threads(threads);
-  long sum = 0;
+  unsigned long sum = 0;
   
   unsigned int start_time = clock();
   #pragma omp parallel reduction(+: sum)
   {
     #pragma omp for 
-    for(int i = start; i <= end; ++i)
+    for(unsigned long i = start; i <= end; ++i)
     {
       sum += i;
     }

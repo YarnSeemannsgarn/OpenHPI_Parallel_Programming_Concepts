@@ -1,0 +1,8 @@
+# Emacs files
+*~
+
+# Compiled object files
+*.o
+
+# Compiled executable
+parallel_reduce
