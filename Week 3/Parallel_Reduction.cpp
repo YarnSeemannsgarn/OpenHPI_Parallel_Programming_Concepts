@@ -50,4 +50,6 @@ int main(int argc, char* argv[])
   std::cout << "Result: " << sum << std::endl
 	    << "Used threads: " << omp_get_max_threads() << std::endl
 	    << "Time: " << time << "ms" << std::endl;
+
+  return 0;
 }
